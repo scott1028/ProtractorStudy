@@ -50,6 +50,56 @@ exports.config = {
 ### Run Your Test
 
 ~~~
-webdriver-manager start           // 務必要啟動，而且 JDK 版本太低會出錯！
-protractor conf.js
+$ webdriver-manager start           // 務必要啟動，而且 JDK 版本太低會出錯！
+$ protractor conf.js
 ~~~
+
+### Run Your Test with "debugger;" keyword in your test-spec file
+
+~~~
+$ protractor debug conf-another.js
+  
+  ... (要按一下 "C")
+
+ 10     element(by.css('[ng-click="submit()"]')).click();
+>11     debugger;
+ 12     element(by.cssContainingText('', 'Administration')).click();
+ 13 
+debug> by
+ReferenceError: by is not defined
+    at repl:1:1
+    at Object.exports.runInContext (vm.js:44:17)
+    at Interface.controlEval (_debugger.js:952:21)
+    at bound (domain.js:250:14)
+    at REPLServer.runBound [as eval] (domain.js:263:12)
+    at REPLServer.<anonymous> (repl.js:392:12)
+    at emitOne (events.js:77:13)
+    at REPLServer.emit (events.js:169:7)
+    at REPLServer.Interface._onLine (readline.js:210:10)
+    at REPLServer.Interface._line (readline.js:546:8)
+debug> repl
+Press Ctrl + C to leave debug repl
+> by
+{}
+> by.cssContainingText
+[Function]
+> 
+~~~
+
+### Sample
+
+- demo-spec.js (包含使用者登入換頁 Ajax 查詢資料, etc)
+
+### Reference
+
+- API: http://angular.github.io/protractor/#/api?view=ProtractorBy ( read this! )
+- ref: https://teamgaslight.com/blog/getting-started-with-protractor-and-page-objects-for-angularjs-e2e-testing
+- ref: http://stackoverflow.com/questions/5441680/css-selector-based-on-element-text
+- ref: http://luxiyalu.com/protractor-locators-selectors/
+- ref: https://github.com/angular/protractor/blob/master/docs/locators.md
+- ref: http://stackoverflow.com/questions/22807393/angularjs-protractor-wait-for-all-ajax-calls-to-end-full-page-load-before-r ( wait for condition )
+- ref: http://www.ngroutes.com/questions/1be1ee8/how-to-check-the-presence-of-a-dom-element-in-protractor.html
+- ref: http://fixany.xyz/testing-an-event-while-an-ajax-call-is-in-progress-using-protractor-angular-2256/
+- ref: https://angular.github.io/protractor/#/api?view=Protractor.prototype.findElement ( wait util find element you want. )
+- ref: http://stackoverflow.com/questions/24087470/error-when-calling-findelement-after-findelements-on-webdriver-webelement-using ( wait util find element you want. )
+- ref: http://stackoverflow.com/questions/28858339/tell-protractor-to-wait-for-the-page-before-executing-expect
