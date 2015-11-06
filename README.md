@@ -2,7 +2,7 @@
 
 ### Demo
 
-![Alt text](https://raw.githubusercontent.com/scott1028/protractorStudy/master/ProtractorTest.gif "Demo")
+![Alt text](https://raw.githubusercontent.com/scott1028/protractorStudy/master/protractorDemo01.gif "Demo")
 
 ### Installation
 
@@ -21,7 +21,7 @@ $ webdriver-manager start       ← 注意 Java 版本，太低會 Run 不起來
 ~~~
 describe('angularjs homepage todo list', function() {
   it('should add a todo', function() {
-    browser.get('https://angularjs.org');
+    browser.get('https://angularjs.org');     // 你預定要測試的目標 WebUI 伺服器
 
     element(by.model('todoList.todoText')).sendKeys('write first protractor test');
     element(by.css('[value="add"]')).click();    // 似乎也能用 CSS Selector
