@@ -2,7 +2,7 @@
 
 ### Demo
 
-![Alt text](https://raw.githubusercontent.com/scott1028/protractorStudy/master/ProtactorTest.gif "Demo")
+![Alt text](https://raw.githubusercontent.com/scott1028/protractorStudy/master/ProtractorTest.gif "Demo")
 
 ### Installation
 
